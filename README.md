@@ -1,6 +1,11 @@
-# Deprecation Notice!
+# Deprecation Notice! The original project is no longer maintained and the original repository is archived.
 
-NB: This project is no longer maintained and the repository is archived.
+# This Fork is for updates to mariadb
+We've forked this project because the previous devops engineers were running this deployment and we don't want to do all the customization to get this working with mariadb native container for newer versions.
+
+SecurtyESys Updates will be streamed in here for anything that we add to the codebase to make this more agreeable to what we are using it for.
+
+There are a rather large number of variables that are required for multi-master WAN setups; planning on streaming these in the build process natively so we don't have to have a 20 foot mysqld deployment line.
 
 ---
 
@@ -11,7 +16,7 @@ eg [PR 24](https://github.com/docker-library/mariadb/pull/24/files).
 
 This image uses entrypoint modifications similar to the ones by [Kristian Klausen](https://github.com/klausenbusk/mariadb/blob/78df6f06732897bee0a69ee6332884f9cb1f5fbd/10.1/docker-entrypoint.sh) to provide (better) Galera support for the offcial `mariadb:10.1` image.
 
-Also included is [Galera Arbitrator](http://galeracluster.com/documentation-webpages/arbitrator.html) (aka `garbd`) which allows you to maintain quorum with a two node cluster. (Not required when running 3 or more nodes).
+Also included is [Galera Arbitrator](http://galeracluster.com/documentation-webpages/arbitrator.html) (aka `garbd`) which allows you to maintain quorum with a two node cluster. (Not required when running 3 or more nodes, helps when spanning WAN segments).
 
 ## Usage
 
